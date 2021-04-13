@@ -17,7 +17,7 @@ class MahasiswaMatakuliah extends Migration
             $table->id();
             $table->string('Mahasiswa_Nim', 20)->nullable();
             $table->unsignedBigInteger('MataKuliah_id')->nullable();
-            $table->foreign('Mahasiswa_Nim')->references('Nim')->on('mahasiswa');
+            $table->foreign('Mahasiswa_Nim')->references('Nim')->on('mahasiswas');
             $table->foreign('MataKuliah_id')->references('id')->on('matakuliah');
             $table->string('Nilai');
         });
