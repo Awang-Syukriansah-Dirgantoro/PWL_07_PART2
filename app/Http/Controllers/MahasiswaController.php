@@ -24,7 +24,7 @@ class MahasiswaController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
-        return view('users.create',['kelas' => $kelas]);
+        return view('users.create', ['kelas' => $kelas]);
     }
     public function store(Request $request)
     {
@@ -55,7 +55,7 @@ class MahasiswaController extends Controller
     public function show($Nim)
     {
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
-        $Mahasiswa = Mahasiswa::find($Nim);
+        $Mahasiswa = Mahasiswa::with('kelas')->where('Nim', $Nim)->first();
         return view('users.detail', compact('Mahasiswa'));
     }
     public function edit($Nim)
