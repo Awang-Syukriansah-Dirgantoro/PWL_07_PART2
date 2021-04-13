@@ -30,4 +30,8 @@ class Mahasiswa extends Model //Definisi Model
     public function kelas(){
         return $this->belongsTo(Kelas::class,'Kelas_id','id');
     }
+    public function matakuliah()
+    {
+        return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'mahasiswa_nim', 'matakuliah_id')->withPivot('nilai');
+    }
 };
