@@ -18,11 +18,13 @@ class MahasiswaController extends Controller
         //fungsi eloquent menampilkan data menggunakan pagination
         $mahasiswas = Mahasiswa::with('kelas')->get(); // Mengambil semua isi tabel
         $posts = Mahasiswa::orderBy('Nim', 'desc')->paginate(5);
+        //dd($mahasiswas);
         return view('users.index', compact('mahasiswas'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function create()
     {
-        return view('users.create');
+        $kelas = Kelas::all();
+        return view('users.create',['kelas' => $kelas]);
     }
     public function store(Request $request)
     {
