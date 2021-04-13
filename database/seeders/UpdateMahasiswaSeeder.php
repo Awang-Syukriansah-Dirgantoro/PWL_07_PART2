@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UpdateMahasiswaSeeder extends Seeder
 {
@@ -13,6 +14,6 @@ class UpdateMahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('mahasiswas')->update(['Kelas_id' => 1]);
     }
 }
