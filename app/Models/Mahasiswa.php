@@ -32,6 +32,6 @@ class Mahasiswa extends Model //Definisi Model
     }
     public function matakuliah()
     {
-        return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'mahasiswa_nim', 'matakuliah_id')->withPivot('nilai');
+        return $this->belongsToMany(MataKuliah::class, 'mahasiswa_matakuliah', 'Mahasiswa_Nim', 'MataKuliah_id')->withPivot('Nilai');
     }
 };
