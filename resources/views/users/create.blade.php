@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Kelas">Kelas</label>
-                            <select class="form-control">
+                            <select type="Kelas" name="Kelas" class="form-control" id="Kelas">
                             @foreach ($kelas as $kls)
                                 <option value="{{ $kls->id }}">{{ $kls->Nama_Kelas }}</option>
                             @endforeach
